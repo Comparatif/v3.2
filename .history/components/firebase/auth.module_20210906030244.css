@@ -1,0 +1,124 @@
+.btn.btn-round {
+    border-radius: 1.875rem;
+  }
+  
+  .btn.btn-rounded {
+    border-radius: 1.875rem;
+  }
+
+  .btn-info:hover,
+.btn.bg-gradient-info:hover {
+  background-color: #17c1e8;
+  border-color: #17c1e8;
+}
+
+.btn-info .btn.bg-outline-info,
+.btn.bg-gradient-info .btn.bg-outline-info {
+  border: 1px solid #17c1e8;
+}
+
+.btn-info:not(:disabled):not(.disabled).active,
+.btn-info:not(:disabled):not(.disabled):active,
+.show>.btn-info.dropdown-toggle,
+.btn.bg-gradient-info:not(:disabled):not(.disabled).active,
+.btn.bg-gradient-info:not(:disabled):not(.disabled):active,
+.show>.btn.bg-gradient-info.dropdown-toggle {
+  color: color-yiq(#17c1e8);
+  background-color: #17c1e8;
+}
+
+.btn-info.focus,
+.btn-info:focus,
+.btn.bg-gradient-info.focus,
+.btn.bg-gradient-info:focus {
+  color: #fff;
+}
+
+.bg-gradient-primary {
+    background-image: linear-gradient(310deg, #7928CA 0%, #FF0080 100%);
+  }
+  
+  .bg-gradient-secondary {
+    background-image: linear-gradient(310deg, #627594 0%, #A8B8D8 100%);
+  }
+  
+  .bg-gradient-success {
+    background-image: linear-gradient(310deg, #17ad37 0%, #98ec2d 100%);
+  }
+  
+  .bg-gradient-info {
+    background-image: linear-gradient(310deg, #2152ff 0%, #21d4fd 100%);
+  }
+  
+  .bg-gradient-warning {
+    background-image: linear-gradient(310deg, #f53939 0%, #fbcf33 100%);
+  }
+  
+  .bg-gradient-danger {
+    background-image: linear-gradient(310deg, #ea0606 0%, #ff667c 100%);
+  }
+  
+  .bg-gradient-light {
+    background-image: linear-gradient(310deg, #CED4DA 0%, #EBEFF4 100%);
+  }
+  
+  .bg-gradient-dark {
+    background-image: linear-gradient(310deg, #141727 0%, #3A416F 100%);
+  }
+
+  .btn-info,
+.btn.bg-gradient-info {
+  color: #fff;
+}
+
+.btn-info:hover,
+.btn.bg-gradient-info:hover {
+  color: #fff;
+}
+
+.btn-lg,
+.btn-group-lg>.btn {
+  padding: 0.875rem 4rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+}
+
+.btn-lg+.dropdown-toggle-split,
+.btn-group-lg>.btn+.dropdown-toggle-split {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+.btn.btn-lg.btn-icon-only,
+.btn-group-lg>.btn.btn-icon-only {
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 1rem 1rem;
+}
+
+.btn.btn-lg i,
+.btn-group-lg>.btn i {
+  font-size: 1.2rem;
+  position: relative;
+  top: 2px;
+}
+
+.w-80 {
+    width: 80% !important;
+  }
+  
+  .w-85 {
+    width: 85% !important;
+  }
+  
+  .w-90 {
+    width: 90% !important;
+  }
+  
+  .w-95 {
+    width: 95% !important;
+  }
+  
+  .w-100 {
+    width: 100% !important;
+  }
