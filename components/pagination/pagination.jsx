@@ -28,8 +28,8 @@ export const Pagination = ({ data }) => {
       pageClassName={"page-item"}
       pageLinkClassName={"page-link mx-1"}
       activeClassName={"page-item active"}
-      previousLinkClassName={"btn bg-gradient-info mx-2"}
-      nextLinkClassName={"btn bg-gradient-info mx-2"}
+      previousLinkClassName={"btn bg-gradient-info mx-2 px-2"}
+      nextLinkClassName={"btn bg-gradient-info mx-2 px-2"}
       initialPage= {currentPage}
 
       

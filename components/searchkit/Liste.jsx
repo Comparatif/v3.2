@@ -48,6 +48,14 @@ export const Listes = ({ data, boutique_infos, votesLoading, user, datetime, Can
     const livraison = hit.fields.livraison
     const paiement = hit.fields.paiement
     const type = hit.fields.type
+    const description1 = hit.fields.description1
+    const brand_name = hit.fields.brand_name
+    const description2 = hit.fields.description2
+    const prod_description = hit.fields.prod_description
+    const prod_specs_big_title = hit.fields.prod_specs_big_title
+    const total = hit.fields.total
+
+   
 
   
   const reducer = (a, b) => a + b;
@@ -172,11 +180,11 @@ useEffect(()=>
   <div class="col-lg-12 col-md-12 col-sm-12 col-12">
   
   <a style={{cursor : "pointer"}} data-bs-toggle="modal" data-bs-target={"#" + cle + "-img"}>
-    <h6 class="mt-1 mx-1 mb-0" id="title-style">{product_names}</h6>
+    <h2 class="mt-1 mx-1 mb-0 title-fontsize-h2" id="title-style">{product_names}</h2>
     </a>
     </div>
     <div class="col-lg-3 col-md-3 col-sm-3 col-3 mb-1 pe-1" >
-      <h1 class="text-gradient text-info ms-1 mb-0" id="state1" id="price-fontsize">{product_prices.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} DA</h1>
+      <h3 class="text-gradient text-info ms-1 mb-0 title-fontsize-h1" id="state1" id="price-fontsize">{product_prices.replace(/\B(?=(\d{3})+(?!\d))/g, " ")} DA</h3>
       <p class="ms-1" id={stocks === 'Rupture de stock' ? "Rupture_de_stock" : "En_stock" }><strong>{stocks}</strong></p>
     </div>
 
@@ -185,25 +193,30 @@ useEffect(()=>
 
     <div style={{maxHeight: "50%"}} title="" data-bs-original-title={"Paiement: " + paiement}  data-bs-toggle="tooltip" data-bs-placement="top">
     {paiement.toString().includes("CCP") ? 
-    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"35%"}} alt= "CCP" src="/img/custom/ccp.png"/> : ""}
-    {paiement.toString().includes("Baridi") ? 
-    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"35%"}} alt="Baridimob" src="/img/custom/baridimob.png"/> : ""}
+    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"33%"}} alt= "CCP" src="/img/custom/ccp.png"/> : ""}
+    {paiement.toString().includes("aridi") ? 
+    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"33%"}} alt="Baridimob" src="/img/custom/baridimob.png"/> : ""}
     {paiement.toString().includes("paypal") ? 
-    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"35%"}} alt="Paypal" src="/img/custom/1156727_finance_payment_paypal_icon.png"/> : ""}
+    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"33%"}} alt="Paypal" src="/img/custom/1156727_finance_payment_paypal_icon.png"/> : ""}
     {paiement.toString().includes("visa") ? 
-    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"35%"}} alt="visa" src="/img/custom/206684_visa_method_card_payment_icon.png"/> : ""}
+    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"33%"}} alt="visa" src="/img/custom/206684_visa_method_card_payment_icon.png"/> : ""}
     {paiement.toString().includes("CIB") ? 
-    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"35%"}} alt="CIB" src="/img/custom/CIB.png"/> : ""}
+    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"33%"}} alt="CIB" src="/img/custom/CIB.png"/> : ""}
+    {paiement.toString().includes("DAHABIA") ? 
+    <img class="shadow" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"33%"}} alt="dahabia" src="/img/custom/edahabia_gold-300x190.png"/> : ""}
     </div>
     
       
     </div>
 
     <div class="col-lg-1 col-md-1 col-sm-1 col-1 mb-1 ps-1 px-1 px-md-2 px-lg-2" >
-    { livraison != undefined ? livraison.toString().includes(" ") ? <img title="" data-bs-original-title={"Livraison: " + livraison} data-bs-toggle="tooltip" data-bs-placement="top" class="col-lg-12 col-md-12 col-sm-12 col-12" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"75%"}} alt= "CCP" src="/img/custom/shipped-icon-13.jpg"/> : "" : ""}
     
+    { livraison != undefined ? livraison.toString().includes("UPS") ? <img title="" data-bs-original-title={"Livraison: " + livraison} data-bs-toggle="tooltip" data-bs-placement="top" class="col-lg-12 col-md-12 col-sm-12 col-12" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"75%"}} alt= {"Livraison -" + livraison} src="/img/custom/UPS-Icon.png"/>: "" : ""}
+    { livraison != undefined ? livraison.toString().includes("FEDEX") ? <img title="" data-bs-original-title={"Livraison: " + livraison} data-bs-toggle="tooltip" data-bs-placement="top" class="col-lg-12 col-md-12 col-sm-12 col-12" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"75%"}} alt= {"Livraison -" + livraison} src="/img/custom/logo-FedEx-1.jpg"/>: "" : ""}
+    { livraison != undefined ? livraison.toString().includes("isponible") || livraison.toString().includes("territoire national") || livraison.toString().includes("Toutes les wilaya")
+     ? <img title="" data-bs-original-title={"Livraison: " + livraison} data-bs-toggle="tooltip" data-bs-placement="top" class="col-lg-12 col-md-12 col-sm-12 col-12" style={{objectFit: "scale-down", aspectRatio: "1 / 1", maxWidth:"75%"}} alt= {"Livraison -" + livraison} src="/img/custom/shipped-icon-13.jpg"/>: "" : ""}
     
-    
+
     
 
     </div>
