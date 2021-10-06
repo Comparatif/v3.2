@@ -29,11 +29,9 @@ import { HitsList } from './searchkit/Hits_composants_pc.jsx'
 
 
 
-const part1  = `
+const query  = gql`
   query resultSet($query: String, $filters: [SKFiltersSet], $page: SKPageInput, $sortBy: String) {
-    results(query: $query, filters: $filters, queryOptions: { fields: [`
-    
-    const part2 = `]}) {
+    results(query: $query, filters: $filters) {
       summary {
         total
         appliedFilters {
@@ -99,6 +97,7 @@ const part1  = `
               livraison
               paiement
               type
+
             }
           }
         }
@@ -114,14 +113,37 @@ const part1  = `
         }
       }
     }
+    description(query: $query) {
+      summary {
+        query
+      }
+      hits {
+        items {
+          ... on DescriptionHit {
+            id
+            fields {
+              product_names
+              description1
+              brand_name
+              description2
+              prod_description
+              prod_specs_big_title
+              total
+            }
+          }
+        }
+      }
+      
+    }
+    
   }
 `
 
 
 
+  
 
-const query1 = gql`${part1 + `"and"` + part2}`
-const query2 = gql`${part1 + `"or"` + part2}`
+
 
 
 const Page = () => {
@@ -130,18 +152,12 @@ const Page = () => {
   
   
   
-  const query = cartItemsVar() == "and" ? query1 : query2
+
 
   const variables = useSearchkitVariables()
   const { previousData, data = previousData, loading } = useQuery(query, { variables })
-  
-  
-  
-  
-  
-  
-  
-    
+
+
     return (
       
       
@@ -150,29 +166,52 @@ const Page = () => {
       
       <Head>
       
+      {
+        
+        
+        data?.results.hits.items.slice(0,1).map((hit)=>
+
+        
+       {
+        const description1 =  data?.description?.hits?.items?.slice(0,1).map(
+          (hit)=>hit.fields.description1
+          
+        
+          )
+        
+
+         const price = hit.fields.product_prices
+        const categories = hit.fields.categories
+        const names = hit.fields.product_names
+        const marques = hit.fields.marques
+        const boutique = hit.fields.vendeurs
+        const stock = hit.fields.stocks
+        const image = hit.fields.product_imagelinks
+
+        return( <>
+      <title>{names} prix Algérie - Comparatif</title>
       
-      <title>{name} prix Algérie - Comparatif</title>
-      
-      <meta name="description" content={data?.results.hits.items.slice(0,1).map((hit)=>"Prix le moins cher : " + hit.fields.product_prices + " DA | "+ hit.fields.categories + " : "+ hit.fields.product_names + " | Marque : " + hit.fields.marques + " | Boutique : " +hit.fields.vendeurs)}/>
+      <meta name="description" content={names + " Algérie | Meilleur prix : " + price + " DA | "+ categories +   " | Marque : " + marques + " | " +description1}/>
  
-      <link rel="canonical" href= {"/informatique/composants_pc/"+ name} />
+      <link rel="canonical" href= {window.location.href} />
       <meta property="og:locale" content= "fr_FR" />
       <meta property="og:type" content= "article" />
-      <meta property="og:title" content= {name +" comparatif Algérie - Prix, stocks & avis"} />
-      <meta property="og:url" content= {"https://comparatifdz.vercel.app/informatique/composants_pc/"+ name} />
+      <meta property="og:title" content= {names +" prix Algérie - Comparatif"} />
+      <meta property="og:url" content= {window.location.href} />
       <meta property="og:site_name" content= "Comparatif dz" />
       <meta property="article:publisher" content="https://www.facebook.com/Comparatifdz"/>
-      <meta property="article:modified_time" content="23/07/2021"/>
-      <meta property="og:image" content= {data?.results.hits.items.slice(0,1).map((hit)=>hit.fields.product_imagelinks)}/>
+      <meta property="article:modified_time" content="05/10/2021"/>
+      <meta property="og:image" content= {image}/>
       <meta property="og:image:width" content="600"/>
       <meta property="og:image:height" content="600"/>
-      <meta property="og:description" content={data?.results.hits.items.slice(0,1).map((hit)=>"Prix le moins cher : " + hit.fields.product_prices + " DA | "+ hit.fields.categories + " : "+ hit.fields.product_names + " | Marque : " + hit.fields.marques + " | Boutique : " +hit.fields.vendeurs)}/>
+      <meta property="og:description" content={names + " Algérie | Meilleur prix : " + price + " DA | "+ categories +   " | Marque : " + marques + " | " +description1}/>
       <meta name="twitter:card" content="summary"/>
-      <meta name="keywords" content= {"Découvrez notre comparatif de prix pour " + name +" en Algérie"}/>
+      <meta name="keywords" content= {names + " | "+ categories + " | Meilleur prix Algérie, stocks & avis - Comparatif, gaming, config, ryzen, intel, HP, ASUS, MSI, NVIDIA, AMD, RTX, GTX"}/>
       <meta property="product:price:currency" content="DZD"/>
       <meta property="product:condition" content="new"/>
-      <meta property="product:availability" content={data?.results.hits.items.slice(0,1).map((hit)=>hit.fields.stocks)}/>
-      
+      <meta property="product:availability" content={stock}/>
+      </>)}
+      )}
       
       
     </Head>
@@ -208,92 +247,17 @@ const Page = () => {
   
  
   <br/>
-  {loading ?
-    <section id="info-produit">
 
-              
-
-<div class="container"> 
-    <div class="row justify-content-center text-center">
- <div class="col-md-12 col-sm-12 col-12 position-absolute top-50">
-    <ClipLoader  color={"#17c1e8"} loading={true} size={50}/>
-    </div>
-    </div>
-    </div>
-    </section>
-     : <>
   
   
 
 
-{ data?.results.summary.total == 0 ?
-  <>
-  {api.setSortBy('relevance')};
-  {data?.results.summary.total == 0 ?
-    <>
-    <section id="results-position">
-    <div class="container p-0">
-    
-   
-    <HitsList data={data} />
-    <Pagination data={data?.results} />
-  
-    
-    {<Maj/>} 
-    
-      
-    </div>
-    </section>
-    <Footer/>
-    </>
-    :
-
-    <>
-    
-    
-    <section id="results-position">
-  <div class="container p-0">
-  <div class="row content-justify-center text-center">
-  
-  <h1>Aucun résultats, Sorry :(</h1>
-    </div>
-    <br class="mb-4"/><br class="mb-4"/><br class="mb-4"/>
-  
-  
-    
   </div>
-  </section>
-  <Footer/>
-    
-    </>
-  }
-    
-  </>
 
-
-:
-<>
-
-  <section id="results-position">
-  <div class="container p-0">
-  
- 
-  <HitsList data={data} />
-  <Pagination data={data?.results} />
-
-  
-  {<Maj/>} 
-  
-    
-  </div>
-  </section>
-  <Footer/>
-</>
-}
    
   
  
-  </>}
+
   
   
 </>
