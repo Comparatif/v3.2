@@ -52,6 +52,16 @@ const query = gql`
           }
         }
       }
+      facets {
+        identifier
+        type
+        label
+        display
+        entries {
+          label
+          count
+        }
+      }
     }
   }
 `

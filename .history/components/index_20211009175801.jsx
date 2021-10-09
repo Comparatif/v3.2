@@ -17,7 +17,34 @@ import { useReactiveVar } from '@apollo/client'
 
 const query = gql`
   query resultSet($query: String, $filters: [SKFiltersSet], $page: SKPageInput, $sortBy: String) {
-    results(query: $query, filters: $filters) {
+    results(query: $query, filters: $filters, queryOptions: { fields: ["and"]}) {
+      summary {
+        total
+        appliedFilters {
+          id
+          identifier
+          display
+          label
+          ... on DateRangeSelectedFilter {
+            dateMin
+            dateMax
+          }
+
+          ... on NumericRangeSelectedFilter {
+            min
+            max
+          }
+
+          ... on ValueSelectedFilter {
+            value
+          }
+        }
+        sortOptions {
+          id
+          label
+        }
+        query
+      }
       hits(page: $page, sortBy: $sortBy) {
         items {
           ... on ResultHit {
@@ -50,6 +77,16 @@ const query = gql`
               type
             }
           }
+        }
+      }
+      facets {
+        identifier
+        type
+        label
+        display
+        entries {
+          label
+          count
         }
       }
     }
