@@ -1,0 +1,1 @@
+export default withApollo(withSearchkit(Search))

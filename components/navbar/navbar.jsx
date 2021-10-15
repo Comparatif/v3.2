@@ -16,8 +16,8 @@ export const NavBar = ({data}) => {
   
   const api = useSearchkit();
   const [Value, SetValue] = useState('Composants_pc')
-  const composants = () => {window.location.pathname === "/" ? location.replace("/Algerie/informatique/Composants_pc") : SetValue('Composants_pc'); SearchkitIndex('Composants_pc'); api.toggleFilter({identifier: "type", value: "Composants_pc"});api.removeFilter({identifier: "type", value: "Laptop"}); api.search();}
-  const laptop = () => {window.location.pathname === "/" ? location.replace("/Algerie/informatique/Laptop") : SetValue('Laptop'); SearchkitIndex('Laptop'); api.toggleFilter({identifier: "type", value: "Laptop"}); api.removeFilter({identifier: "type", value: "Composants_pc"}) ; api.search();}
+  const composants = () => {SearchkitIndex('Composants_pc'); api.toggleFilter({identifier: "type", value: "Composants_pc"});api.removeFilter({identifier: "type", value: "Laptop"}); api.search();}
+  const laptop = () => {SearchkitIndex('Laptop'); api.toggleFilter({identifier: "type", value: "Laptop"}); api.removeFilter({identifier: "type", value: "Composants_pc"}) ; api.search();}
 
   api.getFiltersByIdentifier({identifier: 'type'})
 
