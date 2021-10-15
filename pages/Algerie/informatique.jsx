@@ -1,12 +1,12 @@
 import { withSearchkit, SearchkitClient, withSearchkitRouting } from '@searchkit/client'
 import dynamic from 'next/dynamic'
-import withApollo from '../hocs/withApollo'
+import withApollo from '../../hocs/withApollo'
 import { isArray } from 'lodash';
-import { UserContext, Tri, cartItemsVar, SearchkitIndex } from '../components/UserContext.js'
+import { UserContext, Tri, cartItemsVar, SearchkitIndex } from '../../components/UserContext.js'
 import { getDataFromTree } from "@apollo/client/react/ssr"
 
 const Search = dynamic(() => 
-import('../components/composants_pc'), { ssr: true },
+import('../../components/composants_pc'), { ssr: true },
 )
 
 
@@ -90,10 +90,10 @@ export default withApollo(withSearchkit(withSearchkitRouting(Search, {
       addQueryPrefix: true, 
     })
 
-    return `/${queryString}`}
+    return `/Algerie/informatique/${typeCategoryURL}${queryString}`}
   },
   parseURL: ({ qsModule, location }) => {
-    const matches = location.pathname.replace('+', '1').match(/Algerie\/(\w+)/)
+    const matches = location.pathname.replace('+', '1').match(/informatique\/(\w+)/)
     const routeState = qsModule.parse(location.search.slice(1), { arrayLimit: 99 })
     
 

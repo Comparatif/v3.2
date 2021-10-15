@@ -98,7 +98,7 @@ const searchkitConfig = {
 }
 
 const descriptionConfig = {
-  host: process.env.ES_HOST || 'http://localhost:9200' ,
+  host: process.env.ES_HOST ,
   index: 'materielnet',
   hits: {
     fields: ['product_names','description1','brand_name','description2','prod_description','prod_specs_big_title','total']
