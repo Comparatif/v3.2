@@ -1,0 +1,172 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model Order {
+  Number              Int      @id @default(autoincrement())
+  id                  String   @unique
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  pending             Boolean  @default(true)
+  accepted            Boolean  @default(false)
+  canceledByUser      Boolean  @default(false)
+  canceledByShop      Boolean  @default(false)
+  canceledByAdmin     Boolean  @default(false)
+  sold                Boolean  @default(false)
+  acceptedAt          DateTime
+  canceledByUserAt    DateTime
+  canceledByShopAt    DateTime
+  canceledByAdminAt   DateTime
+  soldAt              Boolean
+  author              User     @relation(fields: [authorId], references: [id])
+  productOrder        Product  @relation(fields: [productId], references: [id])
+  shop                Shop     @relation(fields: [shopId], references: [id])
+  authorId            String
+  productId           Int
+  shopId              Int
+  orderEmail          String?
+  
+}
+
+model Profile {
+  id        Int      @id @default(autoincrement())
+  bio       String?
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Subscription {
+  id        Int      @id @default(autoincrement())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String   @unique
+  legendary Boolean  @default(false)
+  epic      Boolean  @default(false)
+  basic     Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+}
+
+model User {
+  id            String   @id @default(cuid())
+  userEmail     String?  @unique
+  emailVerified DateTime?
+  firstName     String?
+  lastName      String?
+  phoneNumber   String?
+  countryName   String?
+  city          String?
+  user_commune  String?
+  orders        Order[]
+  profile       Profile?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  subscription  Subscription?
+  company       String?
+  accounts      Account[]
+  sessions      Session[]
+  image         String?
+  
+}
+
+
+model Shop {
+  id                  Int      @id @default(autoincrement())
+  vendeurs            String   @unique
+  villes1             String?
+  adresses            String?
+  telephone1          String?
+  telephone2          String?
+  fix1                String?
+  shopEmail           String?
+  facebook            String?
+  instagram           String?
+  horaires            String?
+  localisation        String?
+  shop_website        String?
+  shop_commune        String?
+  livraison           String?
+  paiement            String?
+  vendeurs_image      String?
+  orders              Order[]
+  products            Product[]
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+}
+
+model Product {
+  id                  Int      @id @default(autoincrement())
+  product_names       String   @db.VarChar(255)
+  product_imagelinks  String?
+  marques             String?
+  categories          String?
+  product_links       String?
+  product_prices      String?
+  stocks              String?
+  product_country     String?
+  product_commune     String?
+  type                String?
+  orders              Order[]
+  vendeur             Shop     @relation(fields: [vendeurId], references: [id])
+  vendeurId           Int
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+}
+
+model Account {
+  id                 String    @id @default(cuid())
+  userId             String
+  providerType       String
+  providerId         String
+  providerAccountId  String
+  refreshToken       String?
+  accessToken        String?
+  accessTokenExpires DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id])
+  @@unique([providerId, providerAccountId])
+  }
+
+model Session {
+  id           String   @id @default(cuid())
+  userId       String
+  expires      DateTime
+  sessionToken String   @unique
+  accessToken  String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
+  }
+
+model VerificationRequest {
+  id         String   @id @default(cuid())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  @@unique([identifier, token])
+  }
+
+
+  model Connections {
+  id            String   @id @default(cuid())
+  email         String  
+  createdAt     DateTime @default(now())
+}

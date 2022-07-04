@@ -1,0 +1,15 @@
+@media (min-width: 767.98px) {
+
+
+.searchbar_ligne{
+      min-width: 400px !important; 
+      max-width: 400px !important
+    
+    
+    }
+
+.results_ligne{
+    min-width: 130px !important;
+    max-width: 130px !important
+}
+}

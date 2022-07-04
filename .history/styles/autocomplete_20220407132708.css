@@ -1,0 +1,656 @@
+*
+{
+    outline: none;
+}
+
+
+.tb
+{
+    display: table;
+    width: 100%;
+    min-height: 40px;
+    
+}
+
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+    min-height: 40px;
+}
+
+
+@media (min-width: 767.98px) {
+
+
+
+    .autocomplete-input, .autocomplete-button
+    {
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: transparent;
+    }
+
+    .autocomplete-input-ligne, .autocomplete-button-ligne
+    {
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: transparent;
+    }
+    
+    #cover-autocomplete
+    {
+        
+        
+        width: 91.666667%;
+        
+        padding-left: 15px ;
+        padding-right: 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        background-color: transparent;
+        border-radius: 30px;
+        box-shadow: 0 0 5px white;
+        transform: scale(1);
+        position: absolute;
+        top: 55px;
+    
+    }
+
+    #cover-autocomplete-ligne
+    {
+        
+        
+        width: 91.666667%;
+        
+        padding-left: 15px ;
+        padding-right: 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        background-color: transparent;
+        border-radius: 30px;
+        box-shadow: 0 0 5px white;
+        transform: scale(1);
+        position: absolute;
+        top: 55px;
+    
+    }
+    
+    .form-autocomplete
+    {
+        min-height: 60px;
+        
+    }
+
+    .form-autocomplete-ligne
+    {
+        min-height: 60px;
+        
+    }
+    
+    .autocomplete-input[type="text"]
+    {
+        width: 100%;
+        min-height: 60px;
+        font-size: 30px;
+        line-height: 1;
+    }
+
+    .autocomplete-input-ligne[type="text"]
+    {
+        width: 100%;
+        min-height: 60px;
+        font-size: 30px;
+        line-height: 1;
+    }
+    
+    .autocomplete-input[type="text"]::placeholder
+    {
+        color: white;
+    }
+
+    .autocomplete-input-ligne[type="text"]::placeholder
+    {
+        color: white;
+    }
+    
+    #s-cover
+    {
+        width: 1px;
+        
+    }
+    
+    .autocomplete-button
+    {
+        position: relative;
+        display: block;
+        width: 60px;
+        height: 50px;
+        cursor: pointer;
+        transform: scale(0.5);
+    }
+    
+    #s-circle
+    {
+        position: relative;
+        top: -14px;
+        left: 0px;
+        width: 60px;
+        height: 60px;
+        margin-top: 0;
+        border-width: 15px;
+        border: 15px solid #fff;
+        background-color: transparent;
+        border-radius: 50%;
+        transition: 0.5s ease all;
+    }
+    
+    .autocomplete-button .span-autocomplete
+    {
+        position: absolute;
+        top: 40px;
+        left: 35px;
+        display: block;
+        width: 45px;
+        height: 15px;
+        background-color: transparent;
+        border-radius: 10px;
+        transform: rotateZ(52deg);
+        transition: 0.5s ease all;
+    }
+    
+    .autocomplete-button .span-autocomplete:before, .autocomplete-button .span-autocomplete:after
+    {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 45px;
+        height: 15px;
+        background-color: #fff;
+        border-radius: 10px;
+        transform: rotateZ(0);
+        transition: 0.5s ease all;
+    }
+    
+    #s-cover:hover #s-circle
+    {
+        top: -1px;
+        width: 67px;
+        height: 15px;
+        border-width: 0;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+    
+    #s-cover:hover .span-autocomplete
+    {
+        top: 50%;
+        left: 45px;
+        width: 25px;
+        margin-top: -9px;
+        transform: rotateZ(0);
+    }
+    
+    #s-cover:hover .autocomplete-button .span-autocomplete:before
+    {
+        bottom: 11px;
+        transform: rotateZ(52deg);
+    }
+    
+    #s-cover:hover .autocomplete-button .span-autocomplete:after
+    {
+        bottom: -11px;
+        transform: rotateZ(-52deg);
+    }
+    #s-cover:hover .autocomplete-button .span-autocomplete:before, #s-cover:hover .autocomplete-button .span-autocomplete:after
+    {
+        right: -6px;
+        width: 40px;
+        background-color: #fff;
+    }
+    
+    
+    
+    .a-autocomplete{
+        color: white;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: transparent;
+        font-size: 17px;
+    
+    
+        
+    }
+    
+    
+    #suggestions-titre
+    {
+
+      align-self: center;
+      color: #d8e4ff;
+      font-size: 20px;
+      
+        
+    }
+
+    #suggestions-titre-ligne
+    {
+
+      align-self: center;
+      color: #d8e4ff;
+      font-size: 20px;
+      
+        
+    }
+    
+    #suggestions_acceuil
+    {
+        text-align: left;
+        margin-top: 130px;
+        width: 100%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 15px;
+        padding-left: 15px;
+        background-color: transparent;
+        border-radius: 30px;
+        border: none;
+        box-shadow: 0 0 5px white;
+        margin-bottom: 35px;
+        
+      
+    
+    }
+
+    #suggestions_recherche
+    {
+    
+      text-align: left;
+      margin-top: 130px;
+      width: 100%;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-right: 15px;
+      padding-left: 15px;
+      background-color: transparent;
+      border-radius: 30px;
+      border: none;
+      box-shadow: 0 0 5px white;
+      margin-bottom: 70px;
+      
+    
+    }
+
+    #suggestions_recherche_ligne
+    {
+    
+      text-align: left;
+      margin-top: 130px;
+      width: 100%;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-right: 15px;
+      padding-left: 15px;
+      background-color: transparent;
+      border-radius: 30px;
+      border: none;
+      box-shadow: 0 0 5px white;
+      margin-bottom: 70px;
+      
+    
+    }
+
+ 
+    
+    #single-suggestion
+    {
+    padding: 1px 0.25px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+    font-size: 10px;
+    color: white;
+    
+    
+    }
+    
+    
+    #single-suggestion:hover
+    {
+    text-decoration: underline;
+    background-color: rgba(184, 184, 184, 0.2);  
+    }
+    
+    #suggestions-liste {
+        overflow-y: scroll;
+        max-height: 250px;
+        
+
+
+
+    }
+
+    #suggestions-liste-ligne {
+        overflow-y: scroll;
+        max-height: 250px;
+        
+
+
+
+    }
+
+
+
+}
+
+
+@media (max-width: 767.98px) {
+
+
+
+    
+    .autocomplete-input, .autocomplete-button
+    {
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: transparent;
+    }
+    
+    #cover-autocomplete
+    {
+        
+        width: 91.666667%;
+        padding-left: 15px ;
+        padding-right: 15px;
+        padding-bottom: 3px;
+        background-color: transparent;
+        border-radius: 30px;
+        box-shadow: 0 0 5px white;
+        transform: scale(1);
+        position: absolute;
+        top : 55px;
+        right: 0;
+        left: 0;
+
+    }
+
+    #cover-autocomplete-ligne
+    {
+        
+        width: 91.666667%;
+        padding-left: 15px ;
+        padding-right: 15px;
+        padding-bottom: 3px;
+        background-color: transparent;
+        border-radius: 30px;
+        box-shadow: 0 0 5px white;
+        transform: scale(1);
+        position: absolute;
+        top : 55px;
+        right: 0;
+        left: 0;
+
+    }
+    
+    .form-autocomplete
+    {
+        height: 40px;
+        
+    }
+
+    .form-autocomplete-ligne
+    {
+        height: 40px;
+        
+    }
+    
+    .autocomplete-input[type="text"]
+    {
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        line-height: 1;
+    }
+    
+    .autocomplete-input[type="text"]::placeholder
+    {
+        color: white;
+    }
+    
+    #s-cover
+    {
+        width: 1px;
+        padding-left: 20px;
+    }
+    
+    .autocomplete-button
+    {
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 40px;
+        cursor: pointer;
+        transform: scale(0.4);
+    }
+    
+    #s-circle
+    {
+        position: relative;
+        top: -18px;
+        left: 2px;
+        width: 60px;
+        height: 60px;
+        margin-top: 0;
+        border-width: 15px;
+        border: 15px solid #fff;
+        background-color: transparent;
+        border-radius: 50%;
+        transition: 0.5s ease all;
+    }
+    
+    .autocomplete-button .span-autocomplete
+    {
+        position: absolute;
+        top: 40px;
+        left: 35px;
+        display: block;
+        width: 45px;
+        height: 15px;
+        background-color: transparent;
+        border-radius: 10px;
+        transform: rotateZ(52deg);
+        transition: 0.5s ease all;
+    }
+    
+    .autocomplete-button .span-autocomplete:before, .autocomplete-button .span-autocomplete:after
+    {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 45px;
+        height: 15px;
+        background-color: #fff;
+        border-radius: 10px;
+        transform: rotateZ(0);
+        transition: 0.5s ease all;
+    }
+    
+    #s-cover:hover #s-circle
+    {
+        top: -1px;
+        width: 67px;
+        height: 15px;
+        border-width: 0;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+    
+    #s-cover:hover .span-autocomplete
+    {
+        top: 50%;
+        left: 45px;
+        width: 25px;
+        margin-top: -9px;
+        transform: rotateZ(0);
+    }
+    
+    #s-cover:hover .autocomplete-button .span-autocomplete:before
+    {
+        bottom: 11px;
+        transform: rotateZ(52deg);
+    }
+    
+    #s-cover:hover .autocomplete-button .span-autocomplete:after
+    {
+        bottom: -11px;
+        transform: rotateZ(-52deg);
+    }
+    #s-cover:hover .autocomplete-button .span-autocomplete:before, #s-cover:hover .autocomplete-button .span-autocomplete:after
+    {
+        right: -6px;
+        width: 40px;
+        background-color: #fff;
+    }
+    
+    
+    
+    .a-autocomplete{
+        color: white;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background-color: transparent;
+        font-size: 15px;
+    
+    
+        
+    }
+    
+    
+    #suggestions-titre
+    {
+
+      align-self: center;
+      color: #d8e4ff;
+      font-size: 15px;
+      
+        
+    }
+
+    #suggestions-titre-ligne
+    {
+
+      align-self: center;
+      color: #d8e4ff;
+      font-size: 15px;
+      
+        
+    }
+    
+    #suggestions_acceuil
+    {
+    
+      text-align: left;
+      margin-top: 105px;
+      width: 100%;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-right: 15px;
+      padding-left: 15px;
+      background-color: transparent;
+      border-radius: 30px;
+      border: none;
+      box-shadow: 0 0 5px white;
+      margin-bottom: 40px;
+      
+    
+    }
+
+    #suggestions_recherche
+    {
+    
+      text-align: left;
+      margin-top: 105px;
+      width: 100%;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-right: 15px;
+      padding-left: 15px;
+      background-color: transparent;
+      border-radius: 30px;
+      border: none;
+      box-shadow: 0 0 5px white;
+      margin-bottom: 40px;
+      
+    
+    }
+
+    #suggestions_recherche_ligne
+    {
+    
+      text-align: left;
+      margin-top: 105px;
+      width: 100%;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-right: 15px;
+      padding-left: 15px;
+      background-color: transparent;
+      border-radius: 30px;
+      border: none;
+      box-shadow: 0 0 5px white;
+      margin-bottom: 40px;
+      
+    
+    }
+    
+    #single-suggestion
+    {
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+    font-size: 0px;
+    color: white;
+    
+    
+    }
+    
+    
+    #single-suggestion:hover
+    {
+    text-decoration: underline;
+    background-color: rgba(184, 184, 184, 0.2);  
+    }
+    
+    #suggestions-liste {
+        overflow-y: scroll;
+        max-height: 250px;
+        
+
+
+
+    }
+
+    #suggestions-liste-ligne {
+        overflow-y: scroll;
+        max-height: 250px;
+        
+
+
+
+    }
+
+
+
+}
