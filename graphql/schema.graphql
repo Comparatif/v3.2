@@ -24,7 +24,7 @@ type Edge {
 
 type Mutation {
   deleteOrder(id: String!): Order!
-  updateOrder(accepted: Boolean, acceptedAt: String, acceptedBy: String, canceled: Boolean, canceledAt: String, canceledBy: String, canceledWhy: String, pending: Boolean, sold: Boolean, soldAt: String, soldBy: String): Order!
+  updateOrder(accepted: Boolean, acceptedAt: String, acceptedBy: String, canceled: Boolean, canceledAt: String, canceledBy: String, canceledWhy: String, id: String, pending: Boolean, sold: Boolean, soldAt: String, soldBy: String): Order!
 }
 
 type Order {

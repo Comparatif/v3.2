@@ -224,7 +224,6 @@ export const UpdateOrderMutation = extendType({
       t.nonNull.field('updateOrder', {
         type: 'Order',
         args: {
-            id: stringArg(),
             pending: booleanArg(),
             accepted: booleanArg(),
             acceptedBy: stringArg(),

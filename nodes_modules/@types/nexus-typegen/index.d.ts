@@ -331,6 +331,7 @@ export interface NexusGenArgTypes {
       canceledAt?: string | null; // String
       canceledBy?: string | null; // String
       canceledWhy?: string | null; // String
+      id?: string | null; // String
       pending?: boolean | null; // Boolean
       sold?: boolean | null; // Boolean
       soldAt?: string | null; // String
