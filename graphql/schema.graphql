@@ -87,7 +87,7 @@ type PageInfo {
 }
 
 type Query {
-  orders(after: String, before: String, first: Int, last: Int): Response
+  orders(acceptedBy: String, admin: Boolean, after: String, before: String, canceledBy: String, first: Int, last: Int, pending: Boolean, soldBy: String): Response
 }
 
 type Response {
@@ -100,4 +100,15 @@ type Settings {
   enableRightClick: Boolean
   settingsId: String
   showShop: Boolean
+}
+
+type Summary {
+  CA: Int
+  endCursor: String
+  hasNextPage: Boolean
+  hasPrevPage: Boolean
+  pendingCount: Int
+  postCount: Int
+  soldCount: Int
+  startCursor: String
 }
