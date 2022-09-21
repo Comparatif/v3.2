@@ -101,14 +101,3 @@ type Settings {
   settingsId: String
   showShop: Boolean
 }
-
-type Summary {
-  CA: Int
-  endCursor: String
-  hasNextPage: Boolean
-  hasPrevPage: Boolean
-  pendingCount: Int
-  postCount: Int
-  soldCount: Int
-  startCursor: String
-}

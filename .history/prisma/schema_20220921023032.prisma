@@ -92,7 +92,9 @@ model Auth {
   dashboard          Boolean    @default(false)
 }
 
-
+model Summary {
+  
+}
 
 
 

@@ -92,7 +92,18 @@ model Auth {
   dashboard          Boolean    @default(false)
 }
 
+model Summary {
 
+  chiffredaffaire: Int
+  endCursor: String
+  hasNextPage: Boolean
+  hasPrevPage: Boolean
+  pendingCount: Int
+  postCount: Int
+  soldCount: Int
+  startCursor: String
+
+}
 
 
 

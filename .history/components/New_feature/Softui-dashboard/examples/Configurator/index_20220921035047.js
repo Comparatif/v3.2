@@ -98,7 +98,7 @@ function Configurator() {
         px={3}
       >
         <SuiBox>
-          <SuiTypography variant="h5">Configuration de l'interface Comparatifdz</SuiTypography>
+          <SuiTypography variant="h5">Configuration de l'interface</SuiTypography>
           <SuiTypography variant="body2" color="text">
             See our dashboard options.
           </SuiTypography>

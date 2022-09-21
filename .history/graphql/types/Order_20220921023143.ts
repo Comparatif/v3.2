@@ -92,6 +92,21 @@ export const Response = objectType({
 });
 
 
+export const Summary = objectType({
+    name: 'Summary',
+    definition(t) {
+        t.int('postCount');
+        t.int('soldCount');
+        t.int('pendingCount');
+        t.int('chiffredaffaire');
+        t.string('startCursor');
+        t.string('endCursor');
+        t.boolean('hasPrevPage');
+        t.boolean('hasNextPage');
+    },
+});
+
+
 
 export const OrderQuery = extendType({
     type: 'Query',

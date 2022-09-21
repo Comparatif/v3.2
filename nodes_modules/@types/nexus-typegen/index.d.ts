@@ -126,16 +126,6 @@ export interface NexusGenObjects {
     settingsId?: string | null; // String
     showShop?: boolean | null; // Boolean
   }
-  Summary: { // root type
-    CA?: number | null; // Int
-    endCursor?: string | null; // String
-    hasNextPage?: boolean | null; // Boolean
-    hasPrevPage?: boolean | null; // Boolean
-    pendingCount?: number | null; // Int
-    postCount?: number | null; // Int
-    soldCount?: number | null; // Int
-    startCursor?: string | null; // String
-  }
 }
 
 export interface NexusGenInterfaces {
@@ -236,16 +226,6 @@ export interface NexusGenFieldTypes {
     settingsId: string | null; // String
     showShop: boolean | null; // Boolean
   }
-  Summary: { // field return type
-    CA: number | null; // Int
-    endCursor: string | null; // String
-    hasNextPage: boolean | null; // Boolean
-    hasPrevPage: boolean | null; // Boolean
-    pendingCount: number | null; // Int
-    postCount: number | null; // Int
-    soldCount: number | null; // Int
-    startCursor: string | null; // String
-  }
 }
 
 export interface NexusGenFieldTypeNames {
@@ -335,16 +315,6 @@ export interface NexusGenFieldTypeNames {
     enableRightClick: 'Boolean'
     settingsId: 'String'
     showShop: 'Boolean'
-  }
-  Summary: { // field return type name
-    CA: 'Int'
-    endCursor: 'String'
-    hasNextPage: 'Boolean'
-    hasPrevPage: 'Boolean'
-    pendingCount: 'Int'
-    postCount: 'Int'
-    soldCount: 'Int'
-    startCursor: 'String'
   }
 }
 
