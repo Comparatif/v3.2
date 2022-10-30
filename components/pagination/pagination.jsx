@@ -11,7 +11,7 @@ export const Pagination = ({ data }) => {
     
 
     return (
-      <div class="container">
+      <div className="container">
       
 
       <ReactPaginate

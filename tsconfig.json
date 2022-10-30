@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": "components/New_feature/Softui-dashboard",
     "paths": {
-      "*": ["Softui-dashboard/*"]
+      "*": [
+        "Softui-dashboard/*"
+      ]
     },
     "target": "es5",
     "lib": [
@@ -20,7 +22,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true
   },
   "exclude": [
     "node_modules"
@@ -28,6 +31,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "pages/api/auth/[...nextauth].js", "components/New_feature/Softui-dashboard/layouts/dashboard/components/Projects/data/OrderTracking/OrderTracking.jsx"  ]
+    "**/*.tsx",
+    "pages/api/auth/[...nextauth].js",
+    "components/New_feature/Softui-dashboard/layouts/dashboard/components/Projects/data/OrderTracking/OrderTracking.jsx"
+  ]
 }

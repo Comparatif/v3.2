@@ -20,9 +20,9 @@ export const VoterList = ({ id, vote, shop, datetime, boutique, commentaire }) =
 
               
 
-    <div class="container"> 
-        <div class="row justify-content-center text-center">
-     <div class="col-md-12 col-sm-12 col-12 position-absolute top-50">
+    <div className="container"> 
+        <div className="row justify-content-center text-center">
+     <div className="col-md-12 col-sm-12 col-12 position-absolute top-50">
         <ClipLoader  color={"#17c1e8"} loading={true} size={50}/>
         </div>
         </div>
@@ -40,10 +40,10 @@ export const VoterList = ({ id, vote, shop, datetime, boutique, commentaire }) =
 
  
 
-    <div class="row justify-content-start text-start my-2" style={{borderBottom: '1px solid rgba(191, 191, 191, 0.25)'}}
+    <div className="row justify-content-start text-start my-2" style={{borderBottom: '1px solid rgba(191, 191, 191, 0.25)'}}
       
     >
-    <div class='col-2'>
+    <div className='col-2'>
     <img
         style={{
           borderRadius: "75%",
@@ -56,13 +56,13 @@ export const VoterList = ({ id, vote, shop, datetime, boutique, commentaire }) =
     
     </div>
       
-      <div class="col-10">
+      <div className="col-10">
         <h6 style={{ marginBottom: 0 }}>{value.data()?.displayName ? value.data()?.displayName : value.data()?.email}</h6>
         
         <div>
-        <div class="row justify-content-center" >
+        <div className="row justify-content-center" >
         
-        <div class="col-5 ">
+        <div className="col-5 ">
           <ReactStars
         key={vote}
         count={5}
@@ -77,10 +77,10 @@ export const VoterList = ({ id, vote, shop, datetime, boutique, commentaire }) =
       />
       
       </div>
-      <div class="col-7 text-small text-end"> <p><small>{heure}</small></p></div>
+      <div className="col-7 text-small text-end"> <p><small>{heure}</small></p></div>
         </div>
-        <div class="row justify-content-start text-start">
-        <div class="col-11">
+        <div className="row justify-content-start text-start">
+        <div className="col-11">
         <p><small style={{color: "black"}}>{commentaire}</small></p>
 
        
