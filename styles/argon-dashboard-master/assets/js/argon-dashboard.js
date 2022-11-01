@@ -79,7 +79,7 @@ if (document.querySelector('.fixed-plugin')) {
   var buttonNavbarFixed = document.getElementById('navbarFixed');
 
   if (fixedPluginButton) {
-    fixedPluginButton.onclick = function() {
+    fixedPluginButton.onClick = function() {
       if (!fixedPlugin.classList.contains('show')) {
         fixedPlugin.classList.add('show');
       } else {
@@ -89,7 +89,7 @@ if (document.querySelector('.fixed-plugin')) {
   }
 
   if (fixedPluginButtonNav) {
-    fixedPluginButtonNav.onclick = function() {
+    fixedPluginButtonNav.onClick = function() {
       if (!fixedPlugin.classList.contains('show')) {
         fixedPlugin.classList.add('show');
       } else {
@@ -99,12 +99,12 @@ if (document.querySelector('.fixed-plugin')) {
   }
 
   fixedPluginCloseButton.forEach(function(el) {
-    el.onclick = function() {
+    el.onClick = function() {
       fixedPlugin.classList.remove('show');
     }
   })
 
-  document.querySelector('body').onclick = function(e) {
+  document.querySelector('body').onClick = function(e) {
     if (e.target != fixedPluginButton && e.target != fixedPluginButtonNav && e.target.closest('.fixed-plugin .card') != fixedPluginCard) {
       fixedPlugin.classList.remove('show');
     }
@@ -429,7 +429,7 @@ window.addEventListener("resize", sidenavTypeOnResize);
 window.addEventListener("load", sidenavTypeOnResize);
 
 function sidenavTypeOnResize() {
-  let elements = document.querySelectorAll('[onclick="sidebarType(this)"]');
+  let elements = document.querySelectorAll('[onClick="sidebarType(this)"]');
   if (window.innerWidth < 1200) {
     elements.forEach(function(el) {
       el.classList.add('disabled');
@@ -469,7 +469,7 @@ total.forEach(function(item, i) {
     if (li) {
       let nodes = Array.from(li.closest('ul').children); // get array
       let index = nodes.indexOf(li) + 1;
-      item.querySelector('li:nth-child(' + index + ') .nav-link').onclick = function() {
+      item.querySelector('li:nth-child(' + index + ') .nav-link').onClick = function() {
         moving_div = item.querySelector('.moving-tab');
         let sum = 0;
         if (item.classList.contains('flex-column')) {
