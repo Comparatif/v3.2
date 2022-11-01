@@ -40,13 +40,13 @@ export const UserConnected = ({cle, boutique_infos, datetime, boutique
 
       useEffect(() =>
         {
-          if(CanvasState == (`SignUp-form-${cle}`) && user)
-          {var myOffcanvas = document.getElementById("SignUp-form-" + cle)
+          if((CanvasState == (`SignUp-form-${cle}`) && user))
+          var myOffcanvas = document.getElementById("SignUp-form-" + cle)
           var elem = document.getElementsByClassName("tooltip fade show bs-tooltip-bottom")[0]
           elem?.parentNode.removeChild(elem)
           var elem = document.getElementsByClassName("modal-backdrop fade show")[0]
           elem?.parentNode.removeChild(elem)
-           return (new bootstrap.Offcanvas(myOffcanvas).show() ) }
+           return (new bootstrap.Offcanvas(myOffcanvas).show() ) 
 
       }
       )

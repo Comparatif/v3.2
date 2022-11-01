@@ -38,19 +38,6 @@ export const UserConnected = ({cle, boutique_infos, datetime, boutique
         addVoteDocument(newRating, boutique, datetime)
       };
 
-      useEffect(() =>
-        {
-          if(CanvasState == (`SignUp-form-${cle}`) && user)
-          {var myOffcanvas = document.getElementById("SignUp-form-" + cle)
-          var elem = document.getElementsByClassName("tooltip fade show bs-tooltip-bottom")[0]
-          elem?.parentNode.removeChild(elem)
-          var elem = document.getElementsByClassName("modal-backdrop fade show")[0]
-          elem?.parentNode.removeChild(elem)
-           return (new bootstrap.Offcanvas(myOffcanvas).show() ) }
-
-      }
-      )
-
   return (
     
     
@@ -140,6 +127,8 @@ export const UserConnected = ({cle, boutique_infos, datetime, boutique
       <div className="justify-content-start modal-footer px-1">
         <button type="button" className="btn btn-link  ml-auto" onClick={() => SetCanvas('Off')}>Fermer</button>
       </div>
+   
+  
 
     </div>
     : ""

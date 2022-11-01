@@ -151,7 +151,7 @@ return(
                       </div>
                     </div>
                     <div className="mt-4">
-                    <a href="https://www.facebook.com/Comparatifdz" target="_blank">
+                    <a href="https://www.facebook.com/Comparatifdz" target="_blank" rel="noreferrer">
                       <button  type="button" className="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Facebook" data-bs-original-title="" title="">
                         <i className="fab fa-facebook" aria-hidden="true"></i>
                       </button>

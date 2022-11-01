@@ -2,7 +2,7 @@ import firebase from '../../firebase/firebase/clientApp'
 import React, { useEffect , useContext, useState} from 'react'
 import { useAuth } from '../context/AuthContext'
 
-export const SignInPopup = () =>
+export const SignUpPopup = () =>
 
 {
   const { user, signup } = useAuth()
@@ -54,7 +54,7 @@ return(
               <div className="col-lg-7">
                 <form onSubmit={handleSignup} className="p-3" id="signup-Form">
                   <div className="card-header px-4 pt-sm-5 pb-sm-3 pt-3 pb-2">
-                    <h2>Bienvenue sur Comparatifdz !</h2>
+                    <h2>Bienvenue sur Comparatifdz</h2>
                     <p className="lead"> Créer un compte c'est très simple :</p>
                   </div>
                   <div className="card-body pt-1">
@@ -151,7 +151,7 @@ return(
                       </div>
                     </div>
                     <div className="mt-4">
-                    <a href="https://www.facebook.com/Comparatifdz" target="_blank">
+                    <a href="https://www.facebook.com/Comparatifdz" target="_blank" rel="noreferrer">
                       <button  type="button" className="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Facebook" data-bs-original-title="" title="">
                         <i className="fab fa-facebook" aria-hidden="true"></i>
                       </button>

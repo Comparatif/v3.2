@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-      crossOrigin=""
+      crossorigin
     />
           
         </Head>
@@ -47,7 +47,7 @@ export default class MyDocument extends Document {
     <div id="fb-customer-chat" className="fb-customerchat">
     </div>
     <script async type="text/javascript" src="/static/messenger.js"></script>
-    <script async src="https://kit.fontawesome.com/42d5adcbca.js" crossOrigin="anonymous"/>
+    <script async src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"/>
     <script async type="text/javascript" src="/static/darkmode.js"></script>
     <script async type="text/javascript" src="/static/scroll.js"></script>
           <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
