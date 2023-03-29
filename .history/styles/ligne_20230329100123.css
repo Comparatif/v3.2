@@ -1,0 +1,80 @@
+
+
+
+.searchbar_ligne{
+      min-width: 450px !important; 
+      max-width: 450px !important;
+
+    }
+
+.results_ligne{
+    min-width: 100px !important;
+    max-width: 100px !important
+}
+
+
+@media (max-height: 880.00px) {
+.table_height {
+
+    max-height: 370px !important;
+ 
+ }
+
+
+}
+
+
+@media (min-height: 881.00px) {
+
+    .table_height {
+
+        max-height: 500px !important;
+        overflow-x: scroll
+     
+     }
+
+
+
+    }
+
+
+    #price-fontsize-ligne-currency {
+        font-size:  10px;
+        
+    }
+
+
+.testrow {
+    display: flex;
+    
+}
+
+.fill_bg_selected {
+
+   
+    background-color: #f8f9fa
+
+}
+
+
+@media (max-width: 1399.99px) {
+
+     .table_width {
+    
+        max-width: 1000px !important;
+    
+     }
+    
+    }
+    
+    
+    @media (min-width: 1400.00px) {
+    
+         .table_width {
+    
+            max-width: 1430px !important;
+
+         }
+    
+    
+        }

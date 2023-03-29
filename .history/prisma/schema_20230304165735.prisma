@@ -1,0 +1,402 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model Order {
+  id                  String   @id @default(cuid())
+  orderId             String   @unique
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  pending             Boolean  @default(true)
+  accepted            Boolean  @default(false)
+  acceptedBy          String?
+  acceptedAt          String?  
+  sold                Boolean  @default(false)
+  soldBy              String? 
+  soldAt              String? 
+  canceled            Boolean  @default(false)
+  canceledBy          String?
+  canceledAt          String?
+  canceledWhy         String?
+
+
+  
+  userEmail     String?
+  emailVerified DateTime?
+  firstName     String?
+  lastName      String?
+  phoneNumber   String?
+  countryName   String?
+  city          String?
+  user_commune  String?
+
+  
+  vendeurs            String
+  villes1             String?
+  adresses            String?
+  telephone1          String?
+  telephone2          String?
+  fix1                String?
+  shopEmail           String?
+  facebook            String?
+  instagram           String?
+  horaires            String?
+  localisation        String?
+  shop_website        String?
+  shop_commune        String?
+  livraison           String?
+  paiement            String?
+  vendeurs_image      String?
+
+  product_names       String   @db.VarChar(255)
+  product_imagelinks  String?
+  marques             String?
+  categories          String?
+  product_links       String?
+  product_price       Int?
+  stocks              String?
+  product_country     String?
+  product_commune     String?
+  type                String?
+  
+}
+
+
+model Settings {
+  
+  settingsId         String     @unique
+  showShop           Boolean    @default(false)
+  enableOrder        Boolean    @default(true)
+  enableRightClick   Boolean    @default(false)
+  
+}
+
+model Auth {
+  id                 Int       @id @default(autoincrement())
+  email              String?
+  shop               String?
+  test               Boolean    @default(false)
+  col                Int
+  row                Int
+  dashboard          Boolean    @default(false)
+  data1              String
+data2              String
+data3              String
+data4              String
+data5              String
+data6              String
+data7              String
+data8              String
+data9              String
+data10             String
+data11             String
+data12             String
+data13             String
+data14             String
+data15             String
+data16             String
+data17             String
+data18             String
+data19             String
+data20             String
+data21             String
+data22             String
+data23             String
+data24             String
+data25             String
+data26             String
+data27             String
+data28             String
+data29             String
+data30             String
+data31             String
+data32             String
+data33             String
+data34             String
+data35             String
+data36             String
+data37             String
+data38             String
+data39             String
+data40             String
+data41             String
+data42             String
+data43             String
+data44             String
+data45             String
+data46             String
+data47             String
+data48             String
+data49             String
+data50             String
+data51             String
+data52             String
+data53             String
+data54             String
+data55             String
+data56             String
+data57             String
+data58             String
+data59             String
+data60             String
+data61             String
+data62             String
+data63             String
+data64             String
+data65             String
+data66             String
+data67             String
+data68             String
+data69             String
+data70             String
+data71             String
+data72             String
+data73             String
+data74             String
+data75             String
+data76             String
+data77             String
+data78             String
+data79             String
+data80             String
+data81             String
+data82             String
+data83             String
+data84             String
+data85             String
+data86             String
+data87             String
+data88             String
+data89             String
+data90             String
+data91             String
+data92             String
+data93             String
+data94             String
+data95             String
+data96             String
+data97             String
+data98             String
+data99             String
+data100            String
+data101            String
+data102            String
+data103            String
+data104            String
+data105            String
+data106            String
+data107            String
+data108            String
+data109            String
+data110            String
+data111            String
+data112            String
+data113            String
+data114            String
+data115            String
+data116            String
+data117            String
+data118            String
+data119            String
+data120            String
+data121            String
+data122            String
+data123            String
+data124            String
+data125            String
+data126            String
+data127            String
+data128            String
+data129            String
+data130            String
+data131            String
+data132            String
+data133            String
+data134            String
+data135            String
+data136            String
+data137            String
+data138            String
+data139            String
+data140            String
+data141            String
+data142            String
+data143            String
+data144            String
+data145            String
+data146            String
+data147            String
+data148            String
+data149            String
+data150            String
+data151            String
+data152            String
+data153            String
+data154            String
+data155            String
+data156            String
+data157            String
+data158            String
+data159            String
+data160            String
+data161            String
+data162            String
+data163            String
+data164            String
+data165            String
+data166            String
+data167            String
+data168            String
+data169            String
+data170            String
+data171            String
+data172            String
+data173            String
+data174            String
+data175            String
+data176            String
+data177            String
+data178            String
+data179            String
+data180            String
+data181            String
+data182            String
+data183            String
+data184            String
+data185            String
+data186            String
+data187            String
+data188            String
+data189            String
+data190            String
+data191            String
+data192            String
+data193            String
+data194            String
+data195            String
+data196            String
+data197            String
+data198            String
+data199            String
+data200            String
+data201            String
+data202            String
+data203            String
+data204            String
+data205            String
+data206            String
+data207            String
+data208            String
+data209            String
+data210            String
+data211            String
+data212            String
+data213            String
+data214            String
+data215            String
+data216            String
+data217            String
+data218            String
+data219            String
+data220            String
+data221            String
+data222            String
+data223            String
+data224            String
+data225            String
+data226            String
+data227            String
+data228            String
+data229            String
+data230            String
+data231            String
+data232            String
+data233            String
+data234            String
+data235            String
+data236            String
+data237            String
+data238            String
+data239            String
+data240            String
+data241            String
+data242            String
+data243            String
+data244            String
+data245            String
+data246            String
+data247            String
+data248            String
+data249            String
+data250            String
+data251            String
+data252            String
+data253            String
+data254            String
+data255            String
+data256            String
+data257            String
+data258            String
+data259            String
+data260            String
+data261            String
+data262            String
+data263            String
+data264            String
+data265            String
+data266            String
+data267            String
+data268            String
+data269            String
+data270            String
+data271            String
+data272            String
+data273            String
+data274            String
+data275            String
+data276            String
+data277            String
+data278            String
+data279            String
+data280            String
+data281            String
+data282            String
+data283            String
+data284            String
+data285            String
+data286            String
+data287            String
+data288            String
+data289            String
+data290            String
+data291            String
+data292            String
+data293            String
+data294            String
+data295            String
+data296            String
+data297            String
+data298            String
+data299            String
+data300            String
+}
+
+
+
+
+
+
+
+
+

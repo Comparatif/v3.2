@@ -1,0 +1,36 @@
+@media (min-width: 767.98px) {
+
+
+.searchbar_ligne{
+      min-width: 450px !important; 
+      max-width: 450px !important
+    
+    
+    }
+
+.results_ligne{
+    min-width: 130px !important;
+    max-width: 130px !important
+}
+}
+
+@media (max-height: 880.00px) {
+.table_height {
+
+    max-height: 400px !important;
+ 
+ }
+
+}
+
+
+@media (min-height: 881.00px) {
+
+    .table_height {
+
+        max-height: 730px !important;
+     
+     }
+
+
+    }

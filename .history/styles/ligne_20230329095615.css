@@ -1,0 +1,61 @@
+
+
+
+.searchbar_ligne{
+      min-width: 450px !important; 
+      max-width: 450px !important;
+
+    }
+
+.results_ligne{
+    min-width: 100px !important;
+    max-width: 100px !important
+}
+
+
+@media (max-height: 880.00px) {
+.table_height {
+
+    max-height: 370px !important;
+ 
+ }
+
+}
+
+
+@media (min-height: 881.00px) {
+
+    .table_height {
+
+        max-height: 500px !important;
+        overflow-x: scroll
+     
+     }
+     .table_height {
+
+        max-width: 500px !important;
+
+     
+     }
+
+
+    }
+
+
+    #price-fontsize-ligne-currency {
+        font-size:  10px;
+        
+    }
+
+
+.testrow {
+    display: flex;
+    
+}
+
+.fill_bg_selected {
+
+   
+    background-color: #f8f9fa
+
+}
