@@ -1,6 +1,6 @@
 import { useSearchkit, useSearchkitVariables, useSearchkitQueryValue } from '@searchkit/client'
 
-export const Resultats =  ({setData, data, isSelected, setSelect, id}) =>
+export const Resultats =  ({querys, setData, data, isSelected, setSelect, id}) =>
 
 
 

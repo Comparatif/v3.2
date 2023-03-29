@@ -224,7 +224,7 @@ const Ligne = ({setData, id, SearchState, isOn4, excelData, setExcelData, isSele
         return item.indexOf(id-1) !== 0;
      })])
       setExcelData(excelData => [...excelData, [id-1,...list1], [id-1,...list2]])
-
+      setData({query: data})
 
 
     }
@@ -244,11 +244,11 @@ const Ligne = ({setData, id, SearchState, isOn4, excelData, setExcelData, isSele
               <p>Pas de Résultats</p></> : 
 
               <> <LeftField setData= {setData} isSelected = {isSelected} setSelect = {setSelect} sss={sss} id={id} SearchState={SearchState} data={data} isOn ={isOn} toggleIsOn={toggleIsOn} setQuery={setQuery} liste={liste} IndexChange={IndexChange} />
-              <Resultats  setData= {setData} isSelected = {isSelected} setSelect = {setSelect} data={data} id={id}/>{api.setSortBy('relevance')} {api.search()}</> : 
+              <Resultats querys={querys} setData= {setData} isSelected = {isSelected} setSelect = {setSelect} data={data} id={id}/>{api.setSortBy('relevance')} {api.search()}</> : 
               
               
               <><LeftField setData= {setData} isSelected = {isSelected} setSelect = {setSelect} sss={sss} id={id} SearchState={SearchState} data={data} isOn ={isOn} toggleIsOn={toggleIsOn} setQuery={setQuery} liste={liste} IndexChange={IndexChange} />
-              <Resultats  setData= {setData} isSelected = {isSelected} setSelect = {setSelect} data={data} id={id}/>{api.setSortBy('prix_croissant')}</>}
+              <Resultats querys={querys} setData= {setData} isSelected = {isSelected} setSelect = {setSelect} data={data} id={id}/>{api.setSortBy('prix_croissant')}</>}
 
             </tr>
 

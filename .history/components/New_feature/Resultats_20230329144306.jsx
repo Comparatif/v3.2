@@ -5,7 +5,8 @@ export const Resultats =  ({setData, data, isSelected, setSelect, id}) =>
 
 
 data?.results.hits.items.map((hit, col) => {
-
+    const api = useSearchkit();
+    const query = api.getQuery()
     const vendeurs = hit.fields.vendeurs
     const product_names = hit.fields.product_names
     const product_imagelinks = hit.fields.product_imagelinks
@@ -144,7 +145,7 @@ data?.results.hits.items.map((hit, col) => {
   
   
       
-      <div style={{cursor: "pointer"}} onClick={()=> {setSelect({row: id, col: col}); setData({data: data})}} className="row justify-content-center text-center">
+      <div style={{cursor: "pointer"}} onClick={()=> {setSelect({row: id, col: col}); setData({data: data, query: query})}} className="row justify-content-center text-center">
       <h3 className={isSelected.row === id && isSelected.col === col ? "mb-1 col-8 p-0 z-index-1 text-light text-bold" : "text-gradient text-info mb-1 col-8 p-0 z-index-1"} id="price-fontsize-ligne" ><small>{product_prices.replace(/\B(?=(\d{3})+(?!\d))/g, " ")}</small><small id="price-fontsize-ligne-currency"> DA</small></h3>
       <div className= "testrow justify-content-center">
       <i className="fas fa-credit-card mx-1" style={{color: paiement?.toString() === "" ? "" : "green" }}
