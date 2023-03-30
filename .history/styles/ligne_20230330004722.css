@@ -113,15 +113,11 @@
 }
 .title-fontsize-h1_ligne:hover {
 
-    color: rgb(1, 116, 247)
+    color: rgb(1, 116, 247)results-position
 }
 
 #page-header-custom-recherche-ligne {
     
     min-height: 100px;
 
-}
-
-#results-position-ligne {
-    margin-top: 65px;
 }

@@ -341,7 +341,7 @@ const WeekBeforeThisWeek = '7,8,9,10,11,12,13'.split(',').map(function(n) {
 
 const reportsBarChartData = {
   chart: {
-    labels: Last7DaysArray,
+   
     datasets: { label: "Chiffre d'affaire", data: CA7D },
   },
   items: [
@@ -369,7 +369,7 @@ const reportsBarChartData = {
 };
 
   const gradientLineChartData = {
-    labels: Last7DaysArray,
+
     datasets: [
       isCA ?
       {

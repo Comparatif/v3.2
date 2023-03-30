@@ -116,12 +116,8 @@
     color: rgb(1, 116, 247)
 }
 
-#page-header-custom-recherche-ligne {
+#page-header-custom-recherche {
     
-    min-height: 100px;
+    min-height: 190px;
 
-}
-
-#results-position-ligne {
-    margin-top: 65px;
 }

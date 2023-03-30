@@ -27,6 +27,7 @@ import {
   Legend,
 } from 'chart.js';
 
+import { faker } from '@faker-js/faker';
 
 ChartJS.register(
   CategoryScale,
@@ -272,7 +273,8 @@ return(
                   </a>
                 <div className="colored-shadow" id="card-url"></div></div>
                 <div className="card-body px-1 pt-3 pb-0">
-              
+                  {CheckIfSorted == 'prix_croissant' ? 
+                  
                   <div className="testrow justify-content-center">
                   <button className="btn bg-gradient-info btn-lg col-6 py-2 px-1 mx-1" disabled={isOn4 ? false : true} onClick={toggleIsOn2} >{isOn2 ? 'Description' : 'Spécifications'}</button>
                   <button onClick={()=> toggleIsOn4()} type="button" className="btn bg-gradient-info btn-lg col-6 py-2 px-1 mx-1">Afficher le Graphe</button>

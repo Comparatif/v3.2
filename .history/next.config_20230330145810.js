@@ -30,6 +30,10 @@ module.exports = {
   }
 }*/
 
+module.exports = {
+  reactStrictMode: false,
+
+}
 
 const withImages = require('next-images')
 

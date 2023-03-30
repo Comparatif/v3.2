@@ -29,8 +29,8 @@
     
   ],
   "include": [
-    "next-images/index.d.ts",
-    "index.d.ts",
+    "src/components", 
+    "src/custom.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

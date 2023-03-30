@@ -30,8 +30,10 @@ module.exports = {
   }
 }*/
 
+module.exports = {
+  reactStrictMode: false,
 
-const withImages = require('next-images')
+}const withImages = require('next-images')
 
 module.exports = {
   
@@ -41,5 +43,8 @@ module.exports = {
       }
 }),
   reactStrictMode: false,
- 
-}
+  i18n: {
+    locales: ['en', 'fr', 'ar'],
+    defaultLocale: 'fr',
+  }
+}*/

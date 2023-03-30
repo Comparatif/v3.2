@@ -316,7 +316,7 @@ const WeekBeforeThisWeek = '7,8,9,10,11,12,13'.split(',').map(function(n) {
       return(frenchDate===date)}
 
   const reducer = (a, b) => a + b ;
-  const CA7D = Last7DaysArray?.map((date)=>LastWeeksData?.filter((ligne)=> filterData({date,ligne}))
+  const CA7D = Last7DaysArray.map((date)=>LastWeeksData?.filter((ligne)=> filterData({date,ligne}))
   .map((c) => Number(c?.product_price))
   .reduce(reducer,0))
 

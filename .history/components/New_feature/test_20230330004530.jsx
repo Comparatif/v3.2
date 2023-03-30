@@ -15,9 +15,14 @@ const Page = () => {
       <>
       <NavBarLigne/>
   <header className="bg-gradient-dark position-fixed w-100 z-index-2">
-    <div className="page-header" id="page-header-custom-recherche-ligne">
+    <div className="page-header" id="page-header-custom-recherche-lign">
       <span className="mask bg-gradient-info opacity-8"></span>
-
+      
+        
+        
+      
+        
+    
       <div className="position-absolute w-100 z-index-1 bottom-0">
       
         <svg className="waves-custom" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shapeRendering="auto" >

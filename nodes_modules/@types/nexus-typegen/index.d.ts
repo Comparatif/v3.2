@@ -52,6 +52,7 @@ export interface NexusGenObjects {
     row?: number | null; // Int
     shop?: string | null; // String
     test?: boolean | null; // Boolean
+    test123?: string | null; // String
   }
   Edge: { // root type
     cursor?: string | null; // String
@@ -147,6 +148,7 @@ export interface NexusGenFieldTypes {
     row: number | null; // Int
     shop: string | null; // String
     test: boolean | null; // Boolean
+    test123: string | null; // String
   }
   Edge: { // field return type
     cursor: string | null; // String
@@ -154,6 +156,7 @@ export interface NexusGenFieldTypes {
   }
   Mutation: { // field return type
     deleteOrder: NexusGenRootTypes['Order']; // Order!
+    updateAuth: NexusGenRootTypes['Auth']; // Auth!
     updateOrder: NexusGenRootTypes['Order']; // Order!
   }
   Order: { // field return type
@@ -237,6 +240,7 @@ export interface NexusGenFieldTypeNames {
     row: 'Int'
     shop: 'String'
     test: 'Boolean'
+    test123: 'String'
   }
   Edge: { // field return type name
     cursor: 'String'
@@ -244,6 +248,7 @@ export interface NexusGenFieldTypeNames {
   }
   Mutation: { // field return type name
     deleteOrder: 'Order'
+    updateAuth: 'Auth'
     updateOrder: 'Order'
   }
   Order: { // field return type name
@@ -322,6 +327,16 @@ export interface NexusGenArgTypes {
   Mutation: {
     deleteOrder: { // args
       id: string; // String!
+    }
+    updateAuth: { // args
+      col?: number | null; // Int
+      dashboard?: boolean | null; // Boolean
+      email?: string | null; // String
+      id?: number | null; // Int
+      row?: number | null; // Int
+      shop?: string | null; // String
+      test?: boolean | null; // Boolean
+      test123?: string | null; // String
     }
     updateOrder: { // args
       accepted?: boolean | null; // Boolean

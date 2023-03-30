@@ -26,7 +26,7 @@ const Page = () => {
           </defs>
           <g className="moving-waves">
         
-            <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,1)" ></use>
+            <use xlinkHref="#gentle-wave" x="28" y="0" fill="rgba(255,255,255,1)" ></use>
           </g>
         </svg>
       </div>
