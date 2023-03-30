@@ -1,7 +1,7 @@
 const isBrowser = typeof window !== `undefined`
 
 //export const GA_TRACKING_ID = isBrowser ? (window.location.host == 'localhost:3000' ? '': 'G-5YNNC96PGE')  : ''
-export const GA_TRACKING_ID = document.location.hostname == "comparatifdz.com" ? 'G-5YNNC96PGE' : ''
+export const GA_TRACKING_ID = document.location.hostname == "comparatifdz.com" ? ''
 
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages

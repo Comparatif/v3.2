@@ -29,7 +29,7 @@ export default withApollo(
       
       link: createHttpLink({
         
-        uri: 'http://localhost:3000/api/graphql' || 'https://comparatifdz.com/api/graphql',
+        uri: 'http://localhost:3000/api/graphql'|| 'http://localhost:3000/api/graphql',
        // uri: 'http://localhost:3000/api/graphql',
         credentials: 'same-origin',
         headers: {

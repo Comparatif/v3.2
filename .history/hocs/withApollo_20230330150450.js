@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 
 
 const isBrowser = typeof window !== `undefined`
-const host = isBrowser ? (window.location.host == 'localhost:3000' ? 'http://localhost:3000': '') : ''
+const host = isBrowser ? (window.location.host == 'localhost:3000' ? 'http://localhost:3000': 'https://comparatifdz.com') : ''
 
 export default withApollo(
   
@@ -29,7 +29,7 @@ export default withApollo(
       
       link: createHttpLink({
         
-        uri: 'http://localhost:3000/api/graphql' || 'https://comparatifdz.com/api/graphql',
+        uri: 'http://localhost:3000/api/graphql''http://localhost:3000/api/graphql',
        // uri: 'http://localhost:3000/api/graphql',
         credentials: 'same-origin',
         headers: {

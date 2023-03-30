@@ -4,7 +4,7 @@ import { InMemoryCache, ApolloProvider, ApolloClient, createHttpLink } from '@ap
 import { useRouter } from 'next/router'
 
 const apolloClient = new ApolloClient({
-    uri: 'http://localhost:3000/api/graphqlprisma' || 'https://comparatifdz.com/api/graphqlprisma',
+    uri:'https://comparatifdz.com/api/graphql'|| 'http://localhost:3000/api/graphqlprisma', "http://localhost:3000/api/graphqlprisma",
     cache: new InMemoryCache()
 });
 
