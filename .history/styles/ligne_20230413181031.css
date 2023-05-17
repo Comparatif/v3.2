@@ -1,0 +1,133 @@
+
+
+
+.searchbar_ligne{
+      min-width: 450px !important; 
+      max-width: 450px !important;
+
+    }
+
+.results_ligne{
+    min-width: 100px !important;
+    max-width: 100px !important
+}
+
+
+@media (max-height: 880.00px) {
+.table_height {
+
+    max-height: 600px !important;
+    overflow-y: scroll
+ }
+
+
+}
+
+
+@media (min-height: 881.00px) {
+
+    .table_height {
+
+        max-height: 750px !important;
+        overflow-y: scroll
+     
+     }
+
+
+
+    }
+
+
+    #price-fontsize-ligne-currency {
+        font-size:  10px;
+        
+    }
+
+
+.testrow {
+    display: flex;
+    
+}
+
+.fill_bg_selected {
+
+   
+    background-color: #f8f9fa
+
+}
+
+
+@media (max-width: 1399.99px) {
+
+     .table_width {
+    
+        max-width: 1000px !important;
+        overflow-x: scroll
+    
+     }
+    
+    }
+    
+    
+    @media (min-width: 1400.00px) {
+    
+         .table_width {
+    
+            max-width: 1435px !important;
+            overflow-x: scroll
+
+         }
+    
+    
+        }
+
+.table_width .table_height::-webkit-scrollbar {
+    width: 20px;
+    }
+    
+    .table_width .table_height::-webkit-scrollbar-track {
+    background-color: transparent;
+    }
+    
+    .table_width .table_height::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+    }
+    
+    .table_width::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+    }
+
+    .img_white_background {
+        
+            background-color: rgb(300, 300, 300);
+          
+    }
+
+
+
+
+.title-fontsize-h1_ligne{
+
+    font-size: 1rem;
+}
+.title-fontsize-h1_ligne:hover {
+
+    color: rgb(1, 116, 247)
+}
+
+#page-header-custom-recherche-ligne {
+    
+    min-height: 100px;
+
+}
+
+#results-position-ligne {
+    margin-top: 65px;
+}
+
+.full-shadow-box {
+    box-shadow: 0 0.1rem 0.175rem -0.0125rem rgba(20, 20, 20, 0.12), 0 0.125rem 0.1rem -0.0125rem rgba(20, 20, 20, 0.07), 0 -0.1rem 0.175rem -0.0125rem rgba(20, 20, 20, 0.12), 0 -0.125rem 0.1rem -0.0125rem rgba(20, 20, 20, 0.07) !important;
+}

@@ -1,0 +1,94 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model Order {
+  id                 String    @id @default(cuid())
+  orderId            String    @unique
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  pending            Boolean   @default(true)
+  accepted           Boolean   @default(false)
+  acceptedBy         String?
+  acceptedAt         String?
+  sold               Boolean   @default(false)
+  soldBy             String?
+  soldAt             String?
+  canceled           Boolean   @default(false)
+  canceledBy         String?
+  canceledAt         String?
+  canceledWhy        String?
+  userEmail          String?
+  emailVerified      DateTime?
+  firstName          String?
+  lastName           String?
+  phoneNumber        String?
+  countryName        String?
+  city               String?
+  user_commune       String?
+  vendeurs           String
+  villes1            String?
+  adresses           String?
+  telephone1         String?
+  telephone2         String?
+  fix1               String?
+  shopEmail          String?
+  facebook           String?
+  instagram          String?
+  horaires           String?
+  localisation       String?
+  shop_website       String?
+  shop_commune       String?
+  livraison          String?
+  paiement           String?
+  vendeurs_image     String?
+  product_names      String    @db.VarChar(255)
+  product_imagelinks String?
+  marques            String?
+  categories         String?
+  product_links      String?
+  product_price      Int?
+  stocks             String?
+  product_country    String?
+  product_commune    String?
+  type               String?
+}
+
+model Settings {
+  settingsId       String  @unique
+  showShop         Boolean @default(false)
+  enableOrder      Boolean @default(true)
+  enableRightClick Boolean @default(false)
+}
+
+model Auth {
+  id            Int     @id @default(autoincrement())
+  email         String?
+  shop          String?
+  test          Boolean @default(false)
+  col           Int
+  row           Int
+  dashboard     Boolean @default(false)
+  test123       String? @db.VarChar(12000)
+  su
+
+
+}
+
+model Assli {
+  id            Int     @id @default(autoincrement())
+  name          String?
+  name2         String?
+  famille       String?
+  tri           String?
+  filters       String? @db.VarChar(12000)
+
+}
