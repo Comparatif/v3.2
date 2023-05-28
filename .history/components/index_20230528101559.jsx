@@ -168,8 +168,8 @@ useEffect(() => {
     <Carousell />
     <Produits_favoris data={data} />
   <Produits_recommandés data={data} />
-  {typeof window === 'undefined' ? null : <Stats/>}
   
+  <Stats/>
   <Apropos />
   <Footer/>
   

@@ -30,8 +30,7 @@
     
   ],
   "include": [
-    "next-images/index.d.ts",
-    "index.d.ts",
+
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

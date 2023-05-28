@@ -30,7 +30,7 @@ module.exports = {
   }
 }*/
 
-
+const withTM = require('next-transpile-modules')(["react-icons"]);
 const withImages = require('next-images')
 
 module.exports = {

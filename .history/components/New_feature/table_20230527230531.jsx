@@ -27,7 +27,7 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js-fortest';
+} from 'chart.js';
 import { create } from 'domain'
 
 
