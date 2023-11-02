@@ -2,11 +2,11 @@
 
 
 export const showShop = true
-export const enableOrder = true
+export const enableOrder = false
 export const legendaires = []
 export const epiques  =[]
 export const rares = []
-export const enableRightClick = true
+export const enableRightClick = false
 export const lastUpdate = true
 
 
